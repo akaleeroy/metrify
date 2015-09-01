@@ -185,7 +185,7 @@
     
     // The general regular expression used to find the quantities to convert.
     var quantityPattern = 
-        /\b([\+\-]?(\d+|\d{1,3}(([\s,])\d{3})+)(([.])\d+)?)(\s*|-)?(miles?|mi|foot|feet|ft|inch|inches|in|"|&quot;|yards?|yd|ounces?|oz|pounds?|lb|°F|ºF|&deg;F|fahrenheit|degrees? fahrenheit)\b/i;
+        /\b([\+\-]?(\d+|\d{1,3}(([\s,])\d{3})+)(([.])\d+)?)(\s*|-)?(miles?|mi|foot|feet|ft|inch|inches|in|"|&quot;|yards?|yd|ounces?|oz|pounds?|lb|lbs|°F|ºF|&deg;F|fahrenheit|degrees? fahrenheit)\b/i;
     var fullQuantityGroup = 0;
     var amountGroup = 1;
     var wholePartGroup = 2;
@@ -263,7 +263,7 @@
             slope = 28.3495231;
             toUnits = "g";
             
-        } else if (/^(pounds?|lb)$/i.test(units)) {
+        } else if (/^(pounds?|lb|lbs)$/i.test(units)) {
             intercept = 0;
             slope = 0.45359237;
             toUnits = "kg";
